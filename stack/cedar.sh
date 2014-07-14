@@ -5,10 +5,10 @@ set -e
 set -x
 
 cat > /etc/apt/sources.list <<EOF
-deb http://archive.ubuntu.com/ubuntu quantal main
-deb http://archive.ubuntu.com/ubuntu quantal-security main
-deb http://archive.ubuntu.com/ubuntu quantal-updates main
-deb http://archive.ubuntu.com/ubuntu quantal universe
+deb http://archive.ubuntu.com/ubuntu trusty main
+deb http://archive.ubuntu.com/ubuntu trusty-security main
+deb http://archive.ubuntu.com/ubuntu trusty-updates main
+deb http://archive.ubuntu.com/ubuntu trusty universe
 EOF
 
 apt-get update
@@ -48,9 +48,7 @@ echo -e "\nRemaining suspicious security bits:"
 echo -e "\nInstalled versions:"
 (
   git --version
-  java -version
   ruby -v
-  gem -v
   python -V
 ) | sed -u "s/^/  /"
 

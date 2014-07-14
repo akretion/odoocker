@@ -1,3 +1,3 @@
 
 build:
-	docker build -t progrium/cedarish .
+	docker build -t rvalyi/odoocker-base .
