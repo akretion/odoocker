@@ -14,6 +14,7 @@ EOF
 apt-get update
 
 xargs apt-get install -y --force-yes < packages.txt
+sudo pip install -r requirements.txt
 
 cd /
 rm -rf /var/cache/apt/archives/*.deb

@@ -1,0 +1,36 @@
+--find-links=http://download.gna.org/pychart
+nose
+babel >= 1.0
+PyPDF
+decorator
+docutils
+feedparser
+gdata
+gevent
+psycogreen
+Jinja2
+lxml
+mako
+mock
+passlib
+pillow
+psutil
+psycopg2 >= 2.2
+pydot
+pyparsing < 2
+pyserial
+python-dateutil < 2
+python-ldap
+python-openid
+pytz
+pyusb >= 1.0.0b1
+pyyaml
+qrcode
+reportlab
+requests
+simplejson
+unittest2
+vatnumber
+vobject
+werkzeug
+xlwt

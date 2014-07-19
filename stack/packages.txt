@@ -17,6 +17,7 @@ python-reportlab
 python-yaml
 python-gevent
 python-libxml2
+python-lxml
 python-libxslt1
 python-geoip
 python-markupsafe
@@ -25,3 +26,4 @@ python-psycopg2
 python-pychart
 python-pydot
 python-simplejson
+python-passlib
