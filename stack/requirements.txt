@@ -17,7 +17,7 @@ pillow
 psutil
 psycopg2 >= 2.2
 pydot
-pyparsing < 2
+pyparsing
 pyserial
 python-dateutil < 2
 python-ldap
@@ -34,3 +34,14 @@ vatnumber
 vobject
 werkzeug
 xlwt
+zc.buildout
+asynchat
+asyncore
+commands
+decimal
+email
+encodings
+imaplib
+poplib
+smtplib
+uuid
