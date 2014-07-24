@@ -35,13 +35,3 @@ vobject
 werkzeug
 xlwt
 zc.buildout
-asynchat
-asyncore
-commands
-decimal
-email
-encodings
-imaplib
-poplib
-smtplib
-uuid
