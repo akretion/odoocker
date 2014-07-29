@@ -11,6 +11,8 @@ deb http://archive.ubuntu.com/ubuntu trusty-updates main
 deb http://archive.ubuntu.com/ubuntu trusty universe
 EOF
 
+RUN apt-add-repository ppa:chris-lea/node.js
+
 apt-get update
 
 xargs apt-get install -y --force-yes < packages.txt

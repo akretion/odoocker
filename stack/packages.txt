@@ -27,3 +27,15 @@ python-pychart
 python-pydot
 python-simplejson
 python-passlib
+python-software-properties
+libcurl4-openssl-dev
+libpq-dev
+libreadline-dev
+zlib1g-dev
+flex
+bison
+libxml2-dev
+libxslt1-dev
+libssl-dev
+imagemagick
+nodejs
