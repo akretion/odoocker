@@ -38,3 +38,7 @@ libxslt1-dev
 libssl-dev
 imagemagick
 nodejs
+libncurses5-dev
+libyaml-dev
+libgdbm-dev
+libffi-dev
