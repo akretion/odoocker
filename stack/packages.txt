@@ -9,7 +9,6 @@ openssh-client
 python-dev
 postgresql-client
 python-pip
-software-properties-common
 python-ldap
 libsasl2-dev
 python-pypdf
