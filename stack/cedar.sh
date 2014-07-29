@@ -13,6 +13,7 @@ EOF
 
 apt-get update
 apt-get install -y --force-yes python-software-properties
+apt-get install -y --force-yes software-properties-common
 apt-add-repository ppa:chris-lea/node.js
 apt-get update
 
