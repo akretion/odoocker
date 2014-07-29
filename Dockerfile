@@ -26,9 +26,14 @@ RUN cd /tmp &&\
 RUN ruby-install ruby 2.1.2
 
 # Add Ruby binaries to $PATH
-ln -s /opt/rubies/ruby-2.1.2/bin/ruby /usr/bin/ruby
-#ADD ./ruby.sh /etc/profile.d/ruby.sh
-#RUN chmod a+x /etc/profile.d/ruby.sh
+RUN ln -s /opt/rubies/ruby-2.1.2/bin/ruby /usr/bin/ruby
+RUN ln -s /opt/rubies/ruby-2.1.2/bin/gem /usr/bin/gem
+RUN ln -s /opt/rubies/ruby-2.1.2/bin/bundle /usr/bin/bundle
+RUN ln -s /opt/rubies/ruby-2.1.2/bin/bundler /usr/bin/bundler
+RUN ln -s /opt/rubies/ruby-2.1.2/bin/rake /usr/bin/rake
+RUN ln -s /opt/rubies/ruby-2.1.2/bin/irb /usr/bin/irb
+ADD ./ruby.sh /etc/profile.d/ruby.sh
+RUN chmod a+x /etc/profile.d/ruby.sh
 
 # Install bundler gem globally
 RUN /bin/bash -l -c 'gem install bundler'
