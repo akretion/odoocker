@@ -12,7 +12,7 @@ deb http://archive.ubuntu.com/ubuntu trusty universe
 EOF
 
 apt-get update
-apt-get install python-software-properties
+apt-get install -y --force-yes python-software-properties
 apt-add-repository ppa:chris-lea/node.js
 apt-get update
 
