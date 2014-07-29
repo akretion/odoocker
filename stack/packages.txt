@@ -41,3 +41,5 @@ libncurses5-dev
 libyaml-dev
 libgdbm-dev
 libffi-dev
+sqlite3
+libsqlite3-dev

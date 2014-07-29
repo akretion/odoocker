@@ -26,12 +26,15 @@ RUN cd /tmp &&\
 RUN ruby-install ruby 2.1.2
 
 # Add Ruby binaries to $PATH
-ADD ./ruby.sh /etc/profile.d/ruby.sh
-RUN chmod a+x /etc/profile.d/ruby.sh
+ln -s /opt/rubies/ruby-2.1.2/bin/ruby /usr/bin/ruby
+#ADD ./ruby.sh /etc/profile.d/ruby.sh
+#RUN chmod a+x /etc/profile.d/ruby.sh
 
 # Install bundler gem globally
 RUN /bin/bash -l -c 'gem install bundler'
-
+RUN /bin/bash -l -c 'gem install nokogiri'
+RUN /bin/bash -l -c 'gem install ooor'
+RUN /bin/bash -l -c 'gem install pg'
 
 RUN useradd -d /home/odoo -m odoo
 USER odoo
