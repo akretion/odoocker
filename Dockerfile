@@ -33,5 +33,5 @@ RUN chmod a+x /etc/profile.d/ruby.sh
 RUN /bin/bash -l -c 'gem install bundler'
 
 
-RUN useradd -d /home/daemon -m daemon
-USER daemon
+RUN useradd -d /home/odoo -m odoo
+USER odoo
