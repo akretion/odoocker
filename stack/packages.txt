@@ -26,6 +26,7 @@ python-pychart
 python-pydot
 python-simplejson
 python-passlib
+runit
 libcurl4-openssl-dev
 libpq-dev
 libreadline-dev
