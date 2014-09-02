@@ -44,3 +44,5 @@ libgdbm-dev
 libffi-dev
 libssl0.9.8
 libxmlsec1-dev
+python-setuptools
+python-openssl

@@ -44,5 +44,9 @@ RUN /bin/bash -l -c 'gem install pg'
 RUN wget http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb && \
     dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.de
 
+RUN locale-gen pt_BR.UTF-8
+RUN git clone https://github.com/renatonlima/PySPED.git -b certificado /tmp/PySPED && cd /tmp/PySPED && sudo python setup.py install
+RUN bzr branch lp:aeroolib /tmp/aeroolib --stacked && cd /tmp/aeroolib/aeroolib && sudo python setup.py install
+
 RUN useradd -d /home/odoo -m odoo
 USER odoo
