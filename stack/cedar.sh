@@ -18,12 +18,13 @@ apt-add-repository ppa:chris-lea/node.js
 
 
 apt-get install -y --force-yes wget
-wget http://launchpadlibrarian.net/153428081/libicu48_4.8.1.1-12ubuntu2_amd64.deb
-dpkg -i libicu48_4.8.1.1-12ubuntu2_amd64.deb
-wget https://launchpad.net/~irie/+archive/ubuntu/boost/+build/3978677/+files/libboost-date-time1.49.0_1.49.0-3.1ubuntu1irie1~precise1_amd64.deb
+wget https://s3.amazonaws.com/akretion/libreoffice4.1/libboost-date-time1.49.0_1.49.0-3.1ubuntu1irie1~precise1_amd64.deb
 dpkg -i libboost-date-time1.49.0_1.49.0-3.1ubuntu1irie1~precise1_amd64.deb
-wget http://cz.archive.ubuntu.com/ubuntu/pool/main/libc/libcmis/libcmis-0.3-3_0.3.1-1ubuntu2_amd64.deb
-dpkg -i libcmis-0.3-3_0.3.1-1ubuntu2_amd64.deb
+wget https://s3.amazonaws.com/akretion/libreoffice4.1/libicu48_4.8.1.1-12ubuntu2_amd64.deb
+dpkg -i libicu48_4.8.1.1-12ubuntu2_amd64.deb
+wget https://s3.amazonaws.com/akretion/libreoffice4.1/libcmis-0.3-3_0.3.1-1ubuntu1~quantal1_amd64.deb
+dpkg -i libcmis-0.3-3_0.3.1-1ubuntu1~quantal1_amd64.deb
+
 
 apt-add-repository ppa:libreoffice/libreoffice-4-1
 echo "deb http://ppa.launchpad.net/libreoffice/libreoffice-4-1/ubuntu raring main" >> /etc/apt/sources.list
