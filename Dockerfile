@@ -41,8 +41,8 @@ RUN /bin/bash -l -c 'gem install nokogiri'
 RUN /bin/bash -l -c 'gem install ooor'
 RUN /bin/bash -l -c 'gem install pg'
 
-RUN wget http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb && \
-    dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.de
+RUN wget https://s3.amazonaws.com/akretion/packages/wkhtmltox-0.12.1_linux-trusty-amd64.deb && \
+    dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb
 
 RUN locale-gen pt_BR.UTF-8
 RUN git clone https://github.com/renatonlima/PySPED.git -b certificado /tmp/PySPED && cd /tmp/PySPED && sudo python setup.py install
