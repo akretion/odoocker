@@ -16,28 +16,12 @@ apt-get install -y --force-yes python-software-properties
 apt-get install -y --force-yes software-properties-common
 apt-add-repository ppa:chris-lea/node.js
 
-
-apt-get install -y --force-yes wget
-wget https://s3.amazonaws.com/akretion/libreoffice4.1/libboost-date-time1.49.0_1.49.0-3.1ubuntu1irie1~precise1_amd64.deb
-dpkg -i libboost-date-time1.49.0_1.49.0-3.1ubuntu1irie1~precise1_amd64.deb
-wget https://s3.amazonaws.com/akretion/libreoffice4.1/libicu48_4.8.1.1-12ubuntu2_amd64.deb
-dpkg -i libicu48_4.8.1.1-12ubuntu2_amd64.deb
-wget https://s3.amazonaws.com/akretion/libreoffice4.1/libcmis-0.3-3_0.3.1-1ubuntu1~quantal1_amd64.deb
-dpkg -i libcmis-0.3-3_0.3.1-1ubuntu1~quantal1_amd64.deb
-
-
-apt-add-repository ppa:libreoffice/libreoffice-4-1
-echo "deb http://ppa.launchpad.net/libreoffice/libreoffice-4-1/ubuntu raring main" >> /etc/apt/sources.list
-apt-get update
-apt-get install -y --force-yes libreoffice-common=1:4.1.4~rc2-0ubuntu1~raring1~ppa1
-apt-get install -y --force-yes libreoffice-core=1:4.1.4~rc2-0ubuntu1~raring1~ppa1
-apt-get install -y --force-yes python-uno
-
-
 xargs apt-get install -y --force-yes < packages.txt
+pip install setuptools --upgrade
+wget https://raw.githubusercontent.com/rvalyi/voodoo-image/master/requirements.txt
 sudo pip install -r requirements.txt
-sudo pip install https://github.com/aricaldeira/pyxmlsec/archive/master.zip
-sudo pip install https://github.com/aricaldeira/geraldo/archive/master.zip
+wget -O- https://gist.githubusercontent.com/rvalyi/fb2f76ef3ed07d796771/raw/76822a8acd679dcb12465a23cc808b22f13fd981/gistfile1.txt | sh
+wget -O- https://gist.githubusercontent.com/rvalyi/19a759ca0ee1fe24fb52/raw/b01dc47e9793eeb0db24ae64ae889ce214fbc978/gistfile1.txt | sh
 
 cd /
 rm -rf /var/cache/apt/archives/*.deb

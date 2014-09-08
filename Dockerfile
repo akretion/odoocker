@@ -44,10 +44,9 @@ RUN /bin/bash -l -c 'gem install pg'
 RUN wget https://s3.amazonaws.com/akretion/packages/wkhtmltox-0.12.1_linux-trusty-amd64.deb && \
     dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb
 
-RUN locale-gen pt_BR.UTF-8
-RUN git clone https://github.com/renatonlima/PySPED.git -b certificado /tmp/PySPED && cd /tmp/PySPED && sudo python setup.py install
-RUN pip install geraldo
-RUN bzr branch lp:aeroolib /tmp/aeroolib --stacked && cd /tmp/aeroolib/aeroolib && sudo python setup.py install
+RUN wget -O- https://gist.githubusercontent.com/rvalyi/fb2f76ef3ed07d796771/raw/76822a8acd679dcb12465a23cc808b22f13fd981/gistfile1.txt | sh
+
+RUN wget -O- https://gist.githubusercontent.com/rvalyi/19a759ca0ee1fe24fb52/raw/b01dc47e9793eeb0db24ae64ae889ce214fbc978/gistfile1.txt | sh
 
 RUN useradd -d /home/odoo -m odoo
 USER odoo
