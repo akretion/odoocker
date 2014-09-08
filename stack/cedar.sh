@@ -17,6 +17,7 @@ apt-get install -y --force-yes software-properties-common
 apt-add-repository ppa:chris-lea/node.js
 
 xargs apt-get install -y --force-yes < packages.txt
+pip install pip --upgrade
 pip install setuptools --upgrade
 wget https://raw.githubusercontent.com/rvalyi/voodoo-image/master/requirements.txt
 sudo pip install -r requirements.txt
