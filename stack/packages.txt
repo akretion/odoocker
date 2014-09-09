@@ -16,6 +16,7 @@ python-libxslt1
 python-geoip
 python-markupsafe
 libcurl4-openssl-dev
+libjpeg-dev
 libpq-dev
 libreadline-dev
 zlib1g-dev

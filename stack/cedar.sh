@@ -18,8 +18,11 @@ apt-add-repository ppa:chris-lea/node.js
 
 xargs apt-get install -y --force-yes < packages.txt
 pip install setuptools --upgrade
+pip install --upgrade simplejson==3.6.3
+pip install --upgrade six==1.7.3
 wget https://raw.githubusercontent.com/rvalyi/voodoo-image/master/requirements.txt
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
+pip install --upgrade requests
 wget -O- https://gist.githubusercontent.com/rvalyi/fb2f76ef3ed07d796771/raw/76822a8acd679dcb12465a23cc808b22f13fd981/gistfile1.txt | sh
 wget -O- https://gist.githubusercontent.com/rvalyi/19a759ca0ee1fe24fb52/raw/b01dc47e9793eeb0db24ae64ae889ce214fbc978/gistfile1.txt | sh
 pip install pip --upgrade
