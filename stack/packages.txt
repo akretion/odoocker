@@ -1,5 +1,6 @@
 build-essential
 curl
+daemontools
 wget
 git
 mercurial
