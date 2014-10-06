@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu-debootstrap:14.04
 MAINTAINER rvalyi "rvalyi@akretion.com"
 
 # Ensure UTF-8 locale
@@ -43,8 +43,8 @@ RUN /bin/bash -l -c 'gem install pg'
 
 RUN wget https://s3.amazonaws.com/akretion/packages/wkhtmltox-0.12.1_linux-trusty-amd64.deb && \
     dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb && rm wkhtmltox-0.12.1_linux-trusty-amd64.deb
-RUN wget -O- https://gist.githubusercontent.com/rvalyi/fb2f76ef3ed07d796771/raw/65834556232cb8c9d6474410e6b80c872ba45740/gistfile1.txt | sh
-RUN wget -O- https://gist.githubusercontent.com/rvalyi/19a759ca0ee1fe24fb52/raw/b01dc47e9793eeb0db24ae64ae889ce214fbc978/gistfile1.txt | sh
+RUN wget -O- https://gist.githubusercontent.com/rvalyi/dce2469129a87f21a079/raw/fe48267cd450938e34f08f8ac5284c9029e3dfde/aeroo | sh
+RUN wget -O- https://gist.githubusercontent.com/rvalyi/833ef622de59a4d4588b/raw/a060f7f0fff206fd6a77e600963036e586c0b43e/pysped | sh
 
 RUN useradd -d /home/odoo -m odoo
 USER odoo
