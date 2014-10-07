@@ -43,8 +43,8 @@ RUN /bin/bash -l -c 'gem install pg'
 
 RUN wget https://s3.amazonaws.com/akretion/packages/wkhtmltox-0.12.1_linux-trusty-amd64.deb && \
     dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb && rm wkhtmltox-0.12.1_linux-trusty-amd64.deb
-RUN wget -O- https://gist.githubusercontent.com/rvalyi/dce2469129a87f21a079/raw/fe48267cd450938e34f08f8ac5284c9029e3dfde/aeroo | sh
-RUN wget -O- https://gist.githubusercontent.com/rvalyi/833ef622de59a4d4588b/raw/a060f7f0fff206fd6a77e600963036e586c0b43e/pysped | sh
+RUN wget -O- https://gist.githubusercontent.com/rvalyi/dda7a088437eaae1dbb9/raw/40fc0411a30fb98eaefc06ed0053e05cbf43e006/gistfile1.txt
+RUN wget -O- https://gist.githubusercontent.com/rvalyi/287cd8b05611b9ef92a2/raw/8056b3041c61c48612e2b3f4c575f387a5c74fa3/gistfile1.txt
 
 RUN useradd -d /home/odoo -m odoo
 USER odoo
