@@ -3,7 +3,7 @@ MAINTAINER rvalyi "rvalyi@akretion.com"
 
 # Ensure UTF-8 locale
 RUN echo "LANG=\"en_US.UTF-8\"" > /etc/default/locale
-RUN locale-gen en_US.UTF-8
+RUN locale-gen en_US.UTF-8 && locale-gen pt_BR.UTF-8
 RUN dpkg-reconfigure locales
 
 
