@@ -43,7 +43,7 @@ RUN /bin/bash -l -c 'gem install pg'
 
 RUN wget https://s3.amazonaws.com/akretion/packages/wkhtmltox-0.12.1_linux-trusty-amd64.deb && \
     dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb && rm wkhtmltox-0.12.1_linux-trusty-amd64.deb
-RUN wget -O- https://gist.githubusercontent.com/rvalyi/4bcc33f1e4f7b0c31a7c/raw/0e4447dfff75d61cb7005166ccec6582106e7beb/gistfile1.txt | sh
+RUN git clone https://github.com/aeroo/aeroolib.git /tmp/aeroolib && cd /tmp/aeroolib && python setup.py install && rm -r /tmp/aeroolib
 
 RUN useradd -d /home/odoo -m odoo
 USER odoo

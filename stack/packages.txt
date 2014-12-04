@@ -36,3 +36,5 @@ libssl0.9.8
 xvfb
 libxmlsec1-dev
 python-openssl
+libreoffice-common
+libreoffice-core
