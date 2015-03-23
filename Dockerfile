@@ -11,8 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y python-cups python-dbus python-openssl python-libxml2 && \
     apt-get install -y xfonts-base xfonts-75dpi && \
     apt-get clean && \
-    mkdir /workspace && \
-    mkdir -p /opt/devstep/addons/voodoo
+    mkdir /workspace
 
 RUN wget http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb && \
     dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
@@ -22,7 +21,4 @@ RUN cd /workspace && \
     wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/buildout.dockerfile.cfg && \
     wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/fake_odoo7 && \
     wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/fake_odoo8 && \ 
-    chmod +x build_all && \
-    chmod +x fake_odoo7 && \
-    chmod +x fake_odoo8 && \
     sh build_all
