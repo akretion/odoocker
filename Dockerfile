@@ -9,7 +9,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get install -y libsasl2-dev bzr mercurial libxmlsec1-dev graphviz && \
     apt-get install -y python-cups python-dbus python-openssl python-libxml2 && \
-    apt-get install -y xfonts-base xfonts-75dpi && \
+    apt-get install -y python-pip xfonts-base xfonts-75dpi && \
     apt-get clean && \
     mkdir /workspace
 
