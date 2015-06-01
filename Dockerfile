@@ -11,7 +11,6 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y python-cups python-dbus python-openssl python-libxml2 && \
     apt-get install -y python-pip xfonts-base xfonts-75dpi && \
     apt-get clean && \
-    easy_install -U setuptools zc.buildout && \
     mkdir /workspace && \
     mkdir -p /opt/devstep/addons/voodoo
 
