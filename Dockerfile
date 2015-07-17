@@ -5,9 +5,6 @@ RUN echo "LANG=\"en_US.UTF-8\"" > /etc/default/locale
 RUN locale-gen en_US.UTF-8 && locale-gen pt_BR.UTF-8
 RUN dpkg-reconfigure locales
 
-ENV LANG=en_US.UTF-8
-ENV LC_ALL=en_US.UTF-8
-
 RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get install -y libsasl2-dev bzr mercurial libxmlsec1-dev graphviz && \
