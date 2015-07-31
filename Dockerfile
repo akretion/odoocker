@@ -14,8 +14,8 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     mkdir /workspace && \
     mkdir -p /opt/devstep/addons/voodoo
 
-RUN wget http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb && \
-    dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
+RUN wget http://download.gna.org/wkhtmltopdf/0.12/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb && \
+    dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb
 
 RUN cd /workspace && \
     wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/build_all && \
