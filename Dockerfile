@@ -22,7 +22,6 @@ RUN cd /workspace && \
     wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/build_all && \
     wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/buildout.dockerfile.cfg && \
     wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/fake_odoo7 && \
-    wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/fake_odoo8 && \
     sh build_all
 
 RUN easy_install -U setuptools
