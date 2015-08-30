@@ -1,4 +1,4 @@
-FROM progrium/buildstep
+FROM gliderlabs/herokuish
 
 # Ensure UTF-8 locale
 RUN echo "LANG=\"en_US.UTF-8\"" > /etc/default/locale
