@@ -12,7 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y python-pip xfonts-base xfonts-75dpi npm && \
     apt-get clean && \
     npm install -g less less-plugin-clean-css && \
-    ln -s /usr/bin/nodejs /usr/bin/node && \
+    ln -sf /usr/bin/nodejs /usr/bin/node && \
     mkdir /workspace && \
     mkdir -p /opt/devstep/addons/voodoo
 
