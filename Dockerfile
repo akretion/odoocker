@@ -26,6 +26,6 @@ RUN cd /workspace && \
     wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/fake_odoo9 && \
     sh build_all
 
-RUN rm -rf /build && \
-    ln -s /bin/herokuish /build && \
-    pip install --upgrade setuptools
+RUN pip install --upgrade setuptools && \
+    rm -rf /build && \
+    ln -s /bin/herokuish /build
