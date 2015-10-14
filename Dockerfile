@@ -28,3 +28,6 @@ RUN cd /workspace && \
     sh build_all
 
 RUN easy_install -U setuptools
+
+RUN git clone git://github.com/c9/core.git /c9sdk && cd /c9sdk && scripts/install-sdk.sh
+RUN pip install pudb && pip install watchdog
