@@ -31,7 +31,7 @@ RUN easy_install -U setuptools
 
 RUN pip install pudb && pip install watchdog
 
-VOLUME ["/app/.filestore"]
+VOLUME ["/data"]
 
 RUN useradd -d /home/deploy -m deploy
 RUN git clone git://github.com/c9/core.git /home/deploy/c9sdk && cd /home/deploy/c9sdk && scripts/install-sdk.sh
