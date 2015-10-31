@@ -9,7 +9,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get install -y libsasl2-dev bzr mercurial libxmlsec1-dev graphviz && \
     apt-get install -y python-cups python-dbus python-openssl python-libxml2 && \
-    apt-get install -y python-pip xfonts-base xfonts-75dpi npm && \
+    apt-get install -y python-pip xfonts-base xfonts-75dpi npm vim && \
     apt-get clean && \
     npm install -g less less-plugin-clean-css && \
     ln -sf /usr/bin/nodejs /usr/bin/node && \
@@ -29,5 +29,7 @@ RUN cd /workspace && \
 
 RUN easy_install -U setuptools
 
-RUN git clone git://github.com/c9/core.git /c9sdk && cd /c9sdk && scripts/install-sdk.sh
 RUN pip install pudb && pip install watchdog
+
+RUN useradd -d /home/deploy -m deploy
+RUN git clone git://github.com/c9/core.git /home/deploy/c9sdk && cd /home/deploy/c9sdk && scripts/install-sdk.sh
