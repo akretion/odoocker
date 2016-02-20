@@ -22,6 +22,7 @@ RUN wget http://download.gna.org/wkhtmltopdf/0.12/0.12.1/wkhtmltox-0.12.1_linux-
 RUN cd /workspace && \
     wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/build_all && \
     wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/buildout.dockerfile.cfg && \
+    wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/buildout.bootstrap.cfg && \
     wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/fake_odoo7 && \
     wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/fake_odoo8 && \
     wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/fake_odoo9 && \
