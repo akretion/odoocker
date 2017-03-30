@@ -10,6 +10,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y libsasl2-dev bzr mercurial libxmlsec1-dev graphviz && \
     apt-get install -y python-cups python-dbus python-openssl python-libxml2 && \
     apt-get install -y python-pip xfonts-base xfonts-75dpi npm vim && \
+    apt-get install -y libffi-dev poppler-utils && \
     apt-get clean && \
     npm install -g less less-plugin-clean-css && \
     ln -sf /usr/bin/nodejs /usr/bin/node && \
