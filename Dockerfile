@@ -1,39 +1,50 @@
+# NOTE this is mostly a copy of https://github.com/akretion/voodoo-image/blob/master/Dockerfile
+# a different base image is needed to support the git deploy and all the web stacks we want
 FROM gliderlabs/herokuish
 
-# Ensure UTF-8 locale
-RUN echo "LANG=\"en_US.UTF-8\"" > /etc/default/locale
-RUN locale-gen en_US.UTF-8 && locale-gen pt_BR.UTF-8
-RUN dpkg-reconfigure locales
+USER root
 
 RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
-    apt-get install -y libsasl2-dev bzr mercurial libxmlsec1-dev graphviz && \
-    apt-get install -y python-cups python-dbus python-openssl python-libxml2 && \
-    apt-get install -y python-pip xfonts-base xfonts-75dpi npm vim && \
-    apt-get install -y libffi-dev poppler-utils && \
-    apt-get clean && \
+    apt-get install -y libsasl2-dev bzr mercurial libxmlsec1-dev \
+    python-setuptools graphviz xfonts-base xfonts-75dpi npm git \
+    python-cups python-dbus python-libxml2 \
+    wget libpq-dev libjpeg8-dev libldap2-dev \
+    libffi-dev vim telnet ghostscript poppler-utils && \
     npm install -g less less-plugin-clean-css && \
     ln -sf /usr/bin/nodejs /usr/bin/node && \
-    mkdir /workspace && \
-    mkdir -p /opt/devstep/addons/voodoo
+    apt-get clean
 
+# Force to install the version 0.12.1 of wkhtmltopdf as recomended by odoo
 RUN wget http://download.gna.org/wkhtmltopdf/0.12/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb && \
     dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb
 
-RUN cd /workspace && \
-    wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/build_all && \
-    wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/buildout.dockerfile.cfg && \
-    wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/buildout.bootstrap.cfg && \
-    wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/fake_odoo7 && \
-    wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/fake_odoo8 && \
-    wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/fake_odoo9 && \
-    sh build_all
+RUN locale-gen pt_BR.UTF-8 && \
+    locale-gen en_US.UTF-8 && \
+    update-locale LANG=en_US.UTF-8 && \
+    DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
 
-RUN easy_install -U setuptools
+#Install fonts
+RUN wget https://github.com/akretion/voodoo-image/raw/master/stack/fonts/c39hrp24dhtt.ttf -O /usr/share/fonts/c39hrp24dhtt.ttf
+RUN chmod a+r /usr/share/fonts/c39hrp24dhtt.ttf && fc-cache -f -v
 
+RUN mkdir -p /workspace
+
+# Pre-build environement for odoo
+RUN wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/build -O /workspace/build
+RUN wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/buildout.cfg -O /workspace/buildout.cfg
+RUN wget https://raw.githubusercontent.com/akretion/voodoo-image/master/stack/build/frozen.cfg -O /workspace/frozen.cfg
+RUN sh /workspace/build
+
+RUN adduser odoo
+
+RUN easy_install pip
+RUN pip install --upgrade setuptools
+RUN pip install flake8 && \
+    pip install git+https://github.com/oca/pylint-odoo.git
 RUN pip install pudb && pip install watchdog
 
 VOLUME ["/data"]
 
 RUN useradd -d /home/deploy -m deploy
-RUN git clone git://github.com/c9/core.git /home/deploy/c9sdk && cd /home/deploy/c9sdk && scripts/install-sdk.sh
+#RUN git clone git://github.com/c9/core.git /home/deploy/c9sdk && cd /home/deploy/c9sdk && scripts/install-sdk.sh
