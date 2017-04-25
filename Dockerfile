@@ -44,7 +44,5 @@ RUN pip install flake8 && \
     pip install git+https://github.com/oca/pylint-odoo.git
 RUN pip install pudb && pip install watchdog
 
-VOLUME ["/data"]
-
 RUN useradd -d /home/deploy -m deploy
 #RUN git clone git://github.com/c9/core.git /home/deploy/c9sdk && cd /home/deploy/c9sdk && scripts/install-sdk.sh
