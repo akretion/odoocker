@@ -45,4 +45,6 @@ RUN pip install flake8 && \
 RUN pip install pudb && pip install watchdog
 
 RUN useradd -d /home/deploy -m deploy
+RUN git config --global user.email "voodoo@fake.com" &&\
+    git config --global user.name "Voodoo"
 #RUN git clone git://github.com/c9/core.git /home/deploy/c9sdk && cd /home/deploy/c9sdk && scripts/install-sdk.sh
