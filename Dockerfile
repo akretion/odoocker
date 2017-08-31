@@ -16,7 +16,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # Force to install the version 0.12.1 of wkhtmltopdf as recomended by odoo
-RUN wget http://download.gna.org/wkhtmltopdf/0.12/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb && \
+RUN wget https://downloads.wkhtmltopdf.org/0.12/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb && \
     dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb
 
 RUN locale-gen pt_BR.UTF-8 && \
