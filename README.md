@@ -1,3 +1,5 @@
+## deprectation notice: we now use https://github.com/akretion/odoo-docker
+
 # Odoocker
 
 Docker image based on Ubuntu Trusty LTS with all runtime dependencies for Odoo 7, 8 and 9, using distro pre-compiled packages for libraries with native code
